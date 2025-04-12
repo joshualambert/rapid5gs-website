@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapid5GS - One-Command Mobile Core Deployment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">  _____                    _       _   _____    _____    _____ 
+ |  __ \                  (_)     | | | ____|  / ____|  / ____|
+ | |__) |   __ _   _ __    _    __| | | |__   | |  __  | (___  
+  |  _  /   / _\ | |  _ \  | |  / _\ | |___ \  | | |_ |  \___  \ 
+ | | \ \  | (_| | | |_) | | | | (_| |  ___) | | |__| |  ____) |
+ |_|  \_\  \__,_| | .__/  |_|  \__,_| |____/   \_____| |_____/ 
+                  | |                                          
+                  |_|                                          </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Deploy Your Mobile Core Network in Minutes</h1>
+            <p>Rapid5GS is a one-command solution that automates the entire process of setting up a production-ready Open5GS core network for fixed wireless operators.</p>
+            
+            <div class="install-box">
+                <h2>Get Started Now</h2>
+                <p>Run this single command on Ubuntu 24.04 LTS or Debian 12:</p>
+                <div class="install-command">
+                    <div class="command-content">
+                        <span class="command-prompt">$</span>
+                        <span class="command-text">
+                            <span class="command-part">git clone</span>
+                            <span class="command-url">https://github.com/joshualambert/rapid5gs.git</span>
+                            <span class="command-part">&& cd rapid5gs && chmod +x install.sh && sudo ./install.sh</span>
+                        </span>
+                    </div>
+                    <button class="copy-button" onclick="copyCommand()">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+                <div class="button-container">
+                    <a href="https://github.com/joshualambert/rapid5gs" class="cta-button">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <script>
+                function copyCommand() {
+                    const command = "git clone https://github.com/joshualambert/rapid5gs.git && cd rapid5gs && chmod +x install.sh && sudo ./install.sh";
+                    navigator.clipboard.writeText(command).then(() => {
+                        const copyBtn = document.querySelector('.copy-button');
+                        const copyIcon = copyBtn.querySelector('.copy-icon');
+                        const copyText = copyBtn.querySelector('.copy-text');
+                        
+                        copyBtn.classList.add('copied');
+                        copyIcon.textContent = '✅';
+                        copyText.textContent = 'Copied!';
+                        
+                        setTimeout(() => {
+                            copyBtn.classList.remove('copied');
+                            copyIcon.textContent = '📋';
+                            copyText.textContent = 'Copy';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Automated Installation</h3>
+                    <p>Step-by-step menu guides you through the entire process</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Configuration</h3>
+                    <p>Automatically sets up all required networking rules</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Health Monitoring</h3>
+                    <p>Built-in tools to monitor network performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="requirements">
+        <div class="container">
+            <h2>System Requirements</h2>
+            <ul class="requirements-list">
+                <li>Ubuntu Server 24.04 LTS or Debian 12</li>
+                <li>Root privileges (sudo access)</li>
+                <li>At least 4GB RAM</li>
+                <li>At least 20GB free disk space</li>
+                <li>2 physical network interfaces</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="supported-hardware">
+        <div class="container">
+            <h2>Supported Hardware</h2>
+            <div class="hardware-grid">
+                <div class="hardware-column">
+                    <h3>Supported eNBs/gNBs</h3>
+                    <ul>
+                        <li>Airspan AirHarmony and AirSpeed units</li>
+                        <li>Nokia AZQC CBRS</li>
+                        <li>Baicells 436q and Nova 233</li>
+                    </ul>
+                </div>
+                <div class="hardware-column">
+                    <h3>Supported UEs</h3>
+                    <ul>
+                        <li>Global Telecom Titan 4000 (recommended for best performance)</li>
+                        <li>BEC RidgeWave 6900</li>
+                        <li>Airspan Airspot</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note" style="margin-top: 2rem; padding: 1rem; background-color: #2c3e50; color: white; border-left: 4px solid #3498db;">
+                <i class="fas fa-info-circle" style="margin-right: 0.5rem; color: #3498db;"></i>
+                While theoretically any standards-compliant 4G/5G eNB/gNB and UE should work, only the above units have been tested. 5G hardware support is theoretically possible but not yet tested.
+            </div>
+        </div>
+    </section>
+
+    <section class="tools">
+        <div class="container">
+            <h2>Powerful Tools</h2>
+            
+            <div class="tool-row">
+                <div class="tool-image">
+                    <img src="screenshots/install.png" alt="Rapid5GS Installation Interface">
+                </div>
+                <div class="tool-content">
+                    <h3>Installation Script (install.sh)</h3>
+                    <p>The installation script provides a guided, step-by-step process to set up your Open5GS core network. It handles:</p>
+                    <ul>
+                        <li>Automatic dependency installation and configuration</li>
+                        <li>Network interface setup and routing rules</li>
+                        <li>Database initialization and configuration</li>
+                        <li>Web interface deployment</li>
+                        <li>System service configuration</li>
+                        <li>Health check setup</li>
+                    </ul>
+                    <p>Simply run the script with sudo privileges, and it will guide you through the entire installation process with clear prompts and explanations.</p>
+                </div>
+            </div>
+
+            <div class="tool-row">
+                <div class="tool-image">
+                    <img src="screenshots/control.png" alt="Rapid5GS Control Interface">
+                </div>
+                <div class="tool-content">
+                    <h3>Control Interface (control.sh)</h3>
+                    <p>The control interface provides powerful tools for monitoring and managing your network:</p>
+                    <ul>
+                        <li><strong>EPC Throughput Monitor:</strong> Real-time view of network traffic and performance</li>
+                        <li><strong>eNB Status:</strong> Monitor connected base stations and their status</li>
+                        <li><strong>UE Status:</strong> Track connected user devices and their activities</li>
+                        <li><strong>Live MME Logs:</strong> Real-time monitoring of the Mobility Management Entity</li>
+                        <li><strong>Live SMF Logs:</strong> Real-time monitoring of the Session Management Function</li>
+                    </ul>
+                    <p>This interface makes it easy to monitor your network's health and troubleshoot issues without diving into complex configuration files or logs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="acknowledgments">
+        <div class="container">
+            <h2><i class="fas fa-heart"></i> Acknowledgments</h2>
+            <div class="acknowledgments-grid">
+                <div class="acknowledgment-card">
+                    <i class="fas fa-code"></i>
+                    <p><a href="https://open5gs.org/">Open5GS team</a> for their work on building an excellent open-source mobility core.</p>
+                </div>
+                <div class="acknowledgment-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>David Peterson (<a href="https://4gengineer.com">4GEngineer.com</a>) and Michael Halls (<a href="https://nimbussolutions.org">nimbussolutions.org</a>) for teaching me the basics of LTE.</p>
+                </div>
+                <div class="acknowledgment-card">
+                    <i class="fas fa-server"></i>
+                    <p>Nick Jones (<a href="https://omnitouch.co.au">omnitouch.co.au</a>) for helping me setup my first Open5GS core installation.</p>
+                </div>
+                <div class="acknowledgment-card">
+                    <i class="fas fa-network-wired"></i>
+                    <p>Sarah Kerr (<a href="https://isptechnology.ca">isptechnology.ca</a>) and Anthony Polsinelli (<a href="https://cydrion.com">cydrion.com</a>) for lots of patience and help with networking the Mikrotik layer.</p>
+                </div>
+                <div class="acknowledgment-card">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <p>John Nettles and <a href="https://www.pinebelt.net/">Pine Belt Communications</a> for providing mobility expertise and access to Band 71 (600mhz) spectrum during the development of Rapid5GS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hire">
+        <div class="container">
+            <h2><i class="fas fa-briefcase"></i> Available For Hire</h2>
+            <div class="hire-intro">
+                <h3>Expert Network Deployment & Consulting</h3>
+                <p>Rapid5GS was created by <a href="https://joshlambert.xyz">Josh Lambert</a>, a software engineer and wireless network operator from Alabama with a passion for building robust mobile networks. He specializes in helping ISPs, governments, businesses, and more build scalable mobility infrastructure.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3>RF Planning</h3>
+                    <p>Expert radio frequency planning and optimization</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Tower Construction</h3>
+                    <p>Professional tower installation services</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Network Design</h3>
+                    <p>End-to-end network architecture and planning</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Marketing Support</h3>
+                    <p>Sales and marketing strategy assistance</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Software Automation</h3>
+                    <p>Custom automation solutions for your network</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>And More</h3>
+                    <p>Additional services tailored to your needs</p>
+                </div>
+            </div>
+            <div class="headshot-container" style="text-align: center; margin: 2rem 0;">
+                <img src="josh_headshot.jpg" alt="Josh Lambert" style="max-width: 200px; border: 3px solid #22c55e;">
+            </div>
+            <div class="contact-cta">
+                <p>Contact Josh Lambert for more information:</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="https://joshlambert.xyz/contact/" class="cta-button">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                    <a href="https://joshlambert.xyz" class="cta-button">
+                        <i class="fas fa-globe"></i>
+                        Visit Josh's Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center;">
+                <img src="alabama.svg" alt="Alabama State Outline" style="width: 70px; height: 70px;">
+            </div>
+            <p>Made with ❤️ in Alabama.<br />Sponsored by <a href="https://centrevilletech.com">Centreville Tech, LLC</a> and <a href="https://alabamalightwave.com">Alabama Lightwave, Inc.</a></p>
+            <p class="footer-links">
+                Both <a href="https://github.com/joshualambert/rapid5gs" target="_blank">Rapid5GS</a> and <a href="https://github.com/joshualambert/rapid5gs-website" target="_blank">this website</a> are open source (GPL v3) • Contributions welcome!
+            </p>
+        </div>
+    </footer>
+</body>
+</html> 
