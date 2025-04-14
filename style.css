@@ -56,9 +56,12 @@ nav {
 }
 
 .hero {
-    padding: 16rem 0 4rem;
-    background: var(--darker-bg);
+    padding: 12rem 0 4rem;
     text-align: center;
+    background: radial-gradient(circle at top left,transparent 9%, #141414 10% ,#141414 15% , transparent 16%) , radial-gradient(circle at bottom left,transparent 9%, #141414 10% ,#141414 15% , transparent 16%), radial-gradient(circle at top right ,transparent 9%, #141414 10% ,#141414 15% , transparent 16%) , radial-gradient(circle at bottom right,transparent 9%, #141414 10% ,#141414 15% , transparent 16%),radial-gradient(circle, transparent 25%, #020617  26%),linear-gradient(45deg, transparent 46%, #141414 47%, #141414 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #141414 47%, #141414 52%, transparent 53%);
+    background-size: 2em 2em;
+    background-color: #020617;
+    opacity: 1
 }
 
 .features {
@@ -93,7 +96,7 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     white-space: nowrap;
@@ -656,9 +659,13 @@ h1, h2, h3 {
 }
 
 footer {
-    background: var(--dark-bg);
-    padding: 3rem 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     border-top: 1px solid rgba(59, 130, 246, 0.2);
+    background: radial-gradient(circle at top left,transparent 9%, #141414 10% ,#141414 15% , transparent 16%) , radial-gradient(circle at bottom left,transparent 9%, #141414 10% ,#141414 15% , transparent 16%), radial-gradient(circle at top right ,transparent 9%, #141414 10% ,#141414 15% , transparent 16%) , radial-gradient(circle at bottom right,transparent 9%, #141414 10% ,#141414 15% , transparent 16%),radial-gradient(circle, transparent 25%, #020617  26%),linear-gradient(45deg, transparent 46%, #141414 47%, #141414 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #141414 47%, #141414 52%, transparent 53%);
+    background-size: 2em 2em;
+    background-color: #020617;
+    opacity: 1
 }
 
 footer .container {
@@ -702,6 +709,14 @@ footer a:hover {
 
 .footer-links i {
     font-size: 1.1rem;
+}
+
+@media (max-width: 1100px) {
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -907,4 +922,4 @@ footer a:hover {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-} 
+}
